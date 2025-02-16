@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engaging Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .category-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .category-button:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+
+        .category-button:active {
+            animation: bounce 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        section {
+            margin-top: 3rem;
+        }
+
+        section h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2rem;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: #4caf50;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #c8e6c9;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover the World </h1>
+    </header>
+
+    <main>
+        <div class="category-buttons">
+            <a href="https://techcrunch.com" class="category-button" target="_blank">Tech</a>
+            <a href="https://www.lonelyplanet.com" class="category-button" target="_blank">Travel</a>
+            <a href="https://www.foodnetwork.com" class="category-button" target="_blank">Food</a>
+            <a href="https://www.goodhousekeeping.com" class="category-button" target="_blank">Lifestyle</a>
+        </div>
+
+        <section id="tech">
+            <h2>Tech</h2>
+            <p>Explore the latest trends in technology, from AI advancements to cutting-edge gadgets.</p>
+        </section>
+
+        <section id="travel">
+            <h2>Travel</h2>
+            <p>Discover breathtaking destinations and travel tips to make your journeys unforgettable.</p>
+        </section>
+
+        <section id="food">
+            <h2>Food</h2>
+            <p>Delve into the world of culinary delights, recipes, and foodie adventures.</p>
+        </section>
+
+        <section id="lifestyle">
+            <h2>Lifestyle</h2>
+            <p>Get inspired with articles on wellness, productivity, and everyday living.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Blog | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

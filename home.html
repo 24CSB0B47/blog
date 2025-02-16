@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner h1 span {
+            font-family: 'Pacifico', cursive;
+            color: #ff6f61;
+        }
+
+        .banner p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #555;
+            margin: 15px 0 30px;
+        }
+
+        .quotes {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #666;
+            margin: 20px 0;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(255, 111, 97, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 111, 97, 0.6);
+        }
+
+        .cta-button:active {
+            animation: bounce 0.3s ease;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .cta-button:active::after {
+            width: 200%;
+            height: 200%;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1rem;
+            color: #888;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        .scroll-indicator:hover {
+            color: #555;
+        }
+
+        .content-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: #f3f3f3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .content-section p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item h3 {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Welcome to <span>Your Dream</span></h1>
+        <p>Start your journey today with our innovative platform.</p>
+        <p class="quotes">"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+        <button class="cta-button">Get Started</button>
+        <div class="scroll-indicator" onclick="document.getElementById('next-section').scrollIntoView();">
+            Scroll Down ⬇
+        </div>
+    </div>
+
+    <div class="content-section" id="next-section">
+        <h2>Our Features</h2>
+        <p>We provide cutting-edge solutions to make your life easier. From innovative tools to seamless user experiences, we are here to transform your journey.</p>
+        <div class="features">
+            <div class="feature-item">
+                <h3>Custom Solutions</h3>
+                <p>Tailored strategies and tools designed to meet your unique needs and goals.</p>
+            </div>
+            <div class="feature-item">
+                <h3>24/7 Support</h3>
+                <p>Always available to assist you with any queries or issues you might face.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Scalability</h3>
+                <p>Solutions that grow with your success, ensuring long-term benefits.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Innovative Design</h3>
+                <p>Modern and user-friendly interfaces that enhance the overall experience.</p>
+            </div>
+        </div>
+        <p class="quotes">"Innovation distinguishes between a leader and a follower." - Steve Jobs</p>
+    </div>
+</body>
+</html>

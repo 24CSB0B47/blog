@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;500&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #3949ab;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #f1c40f;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: #00bcd4;
+      background-image: linear-gradient(45deg, #00bcd4, #8e24aa);
+      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 3.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      color: #ffeb3b;
+    }
+
+    .hero button {
+      margin-top: 1.5rem;
+      padding: 1rem 5rem;
+      font-size: 1.6rem;
+      border: none;
+      cursor: pointer;
+      background-color: #ff4081;
+      color: #fff;
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      background-color: #d81b60;
+    }
+
+    .hero button:active {
+      background-color: #c2185b;
+      transform: translateY(0);
+    }
+
+    /* Hidden content */
+    .more-content {
+      display: none;
+      padding: 2rem;
+      background-color: #fff;
+      color: #333;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out, height 0.4s ease;
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* Check the checkbox to show content */
+    input[type="checkbox"]:checked + .more-content {
+      display: block;
+      opacity: 1;
+      height: auto;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 1rem;
+      padding: 1rem 3rem;
+      font-size: 1.5rem;
+      background-color: #ff4081;
+      color: #fff;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    label:hover {
+      background-color: #d81b60;
+    }
+
+    .more-content h2 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: #1c1051;
+      margin-bottom: 1rem;
+    }
+
+    .more-content p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: #634a87;
+      margin-bottom: 1.5rem;
+    }
+
+    .more-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .more-content ul li {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #212121;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+      color: #ffeb3b;
+      text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    footer a:hover {
+      background-color: rgba(255, 235, 59, 0.2);
+      transform: rotate(15deg);
+    }
+  </style>
+  <title>p1home</title>
+</head>
+<body>
+
+<header>
+  <div class="logo">Creative Blog</div>
+  <nav>
+    <a href="file:///C:/Users/Sreekar/OneDrive/Desktop/htmlprojects/project1/home.html">Home</a>
+    <a href="http://127.0.0.1:3000/project1/blog.html">Blog</a>
+    <a href="http://127.0.0.1:3000/project1/categories.html">Categories</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Welcome to Creative Blog</h1>
+  <p>Sharing ideas, stories, and inspiration with the world.</p>
+  <label for="expand-toggle">Read More</label>
+  <input type="checkbox" id="expand-toggle">
+</div>
+
+<p style="text-align:center;">
+  <img src="https://www.outbrain.com/blog/wp-content/uploads/2024/06/how-to-write-your-first-blog-post-1024x576.png" alt="blog" width="400" height="346">
+</p>
+
+<div class="more-content">
+  <h2>What We Write About</h2>
+  <p>Our blog covers a wide range of topics from technology, creativity, to personal growth. Whether you're a developer, a designer, or someone looking for inspiration, there's something here for you.</p>
+
+  <h3>Topics You Might Enjoy:</h3>
+  <ul>
+    <li><a href="#">The Art of Writing for the Web</a></li>
+    <li><a href="#">Building Your First Mobile App</a></li>
+    <li><a href="#">How to Stay Inspired and Creative</a></li>
+    <li><a href="#">The Future of AI in Content Creation</a></li>
+  </ul>
+</div>
+
+<footer>
+  <p>&copy; 2025 Creative Blog. All rights reserved.</p>
+  <nav>
+    <a href="https://www.facebook.com/saisreekar.nadipalli">Facebook</a>
+    <a href="https://www.instagram.com/sai_sreekar_nadipalli/">Instagram</a>
+  </nav>
+</footer>
+
+</body>
+</html>
